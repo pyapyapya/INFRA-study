@@ -2,8 +2,7 @@ FROM --platform=linux/amd64 python:3.9-slim AS build
 WORKDIR /week1
 RUN pip install poetry
 
-COPY pyproject.toml poetry.lock /
-COPY week1 week1
+COPY . /week1
 
 RUN poetry install --no-root && rm -rf $POETRY_CACHE_DIR
 
