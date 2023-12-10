@@ -6,4 +6,4 @@ COPY pyproject.toml poetry.lock ./
 COPY week1 week1
 RUN poetry install --no-root
 
-CMD poetry run uvicorn week1.main:app --reload --host 0.0.0.0 --port 80
+CMD ["poetry", "run", "uvicorn", "week1.main:app", "--reload", "--host", "0.0.0.0", "--port", "80"]
